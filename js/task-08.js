@@ -1,16 +1,22 @@
 const formEl = document.querySelector(".login-form"); // достукались до форми
-console.log(formEl);
+
 
 
 formEl.addEventListener("submit", (event) => {
     event.preventDefault() // скинули перезавантаження сторінки
     const { elements: { email, password } } = event.currentTarget; //масив переданних значень
-    // console.log({ elements: { email, password } }) // 
 
-    if (email.value === "" || password.value === "") { //перевірка чи всі поля заповненні
-        alert("Всі поля мають бути заповненними!")// попередження
+    if (email.value.trim() === "" || password.value.trim() === "") { //перевірка чи всі поля заповненні
+        return alert("Всі поля мають бути заповненними!")// попередження
     }
+   
+    const dataArray = { //записали данні ввода у інпут у об'єкт
+        email: email.value,
+        password: password.value,
+    }
+    console.log(dataArray);
 
-    console.log(`Email: ${email.value}, Password: ${password.value}`); // записали отриманф данні
+    // записали отримані данні
     event.currentTarget.reset(); // очистили форму
 })
+

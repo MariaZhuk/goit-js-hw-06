@@ -7,9 +7,9 @@ console.log(output)
 inputName.addEventListener('input', (event) => {
     // console.log(event);
     
-    if (inputName.value) { 
+    if (inputName.value.trim()) { 
     return output.textContent = event.currentTarget.value;
         
-    } return output.textContent = "Anonimus"
+    } return output.textContent = "Anonimous";
 
 })
